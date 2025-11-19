@@ -1,71 +1,50 @@
+import Navbar from './components/Navbar'
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <div className="min-h-screen bg-white">
+      <Navbar />
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
-
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
-          </div>
-
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
+      {/* Hero placeholder */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <span className="inline-flex items-center gap-2 text-xs font-medium text-slate-600 bg-slate-100 rounded-full px-3 py-1 mb-4">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              New Collection
+            </span>
+            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 mb-4">Discover products you’ll love</h1>
+            <p className="text-slate-600 mb-8">Shop the latest trends across fashion, gadgets, and home. Handpicked items, fast shipping, easy returns.</p>
+            <div className="flex flex-wrap gap-3">
+              <a href="#shop" className="inline-flex items-center justify-center rounded-md bg-slate-900 text-white px-5 py-3 text-sm font-semibold hover:bg-slate-800">Start shopping</a>
+              <a href="#deals" className="inline-flex items-center justify-center rounded-md border border-slate-300 text-slate-800 px-5 py-3 text-sm font-semibold hover:bg-slate-50">View deals</a>
             </div>
           </div>
-
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
+          <div className="relative">
+            <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200" />
+            <div className="absolute -bottom-6 -left-6 hidden sm:block h-24 w-24 rounded-2xl bg-emerald-100" />
+            <div className="absolute -top-6 -right-6 hidden sm:block h-24 w-24 rounded-full bg-indigo-100" />
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Category teaser */}
+      <section id="categories" className="bg-slate-50 py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-slate-900 mb-6">Shop by category</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {["Women","Men","Tech","Home","Beauty","Sport"].map((c) => (
+              <a key={c} href={`#${c.toLowerCase()}`} className="group rounded-xl border border-slate-200 bg-white p-4 hover:shadow-sm transition">
+                <div className="aspect-square rounded-lg bg-slate-100 mb-3 group-hover:bg-slate-200 transition" />
+                <div className="text-center text-sm font-medium text-slate-700">{c}</div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer placeholder */}
+      <footer className="py-10 text-center text-xs text-slate-500">© {new Date().getFullYear()} Flames Shop. All rights reserved.</footer>
     </div>
   )
 }
